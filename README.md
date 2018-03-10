@@ -1,5 +1,5 @@
 # JBOSS EAP 6.4 [![Build Status](https://travis-ci.org/daggerok/jboss-eap-6.4.svg?branch=master)](https://travis-ci.org/daggerok/jboss-eap-6.4)
-Docker hub automation build. Based on (Linux Alpine, OpenJDK 8u151) docker image: `openjdk:8u151-jdk-alpine`
+Docker hub automation build. Based on openjdk:8u151-jdk-alpine image
 
 **Exposed ports**:
 
