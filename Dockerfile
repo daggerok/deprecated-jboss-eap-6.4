@@ -1,9 +1,3 @@
-# git clone https://github.com/daggerok/jboss
-# docker build -t daggerok/jboss -f jboss/Dockerfile .
-# docker tag daggerok/jboss daggerok/jboss:alpine
-# docker tag daggerok/jboss daggerok/jboss:latest
-# docker push daggerok/jboss
-
 FROM openjdk:8u151-jdk-alpine
 MAINTAINER Maksim Kostromin https://github.com/daggerok
 
@@ -44,7 +38,7 @@ RUN wget ${JBOSS_URL} -O ${JBOSS_USER_HOME}/${JBOSS_FILE} \
  && echo "JAVA_OPTS=\"\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\"" >> ${JBOSS_HOME}/bin/standalone.conf
 
 ############################################ USAGE ##############################################
-# FROM daggerok/jboss:jboss-eap-6.4                                                             #
+# FROM daggerok/jboss-eap-6.4:latest                                                            #
 # HEALTHCHECK --timeout=2s --retries=22 \                                                       #
 #         CMD wget -q --spider http://127.0.0.1:8080/my-service/health \                        #
 #          || exit 1                                                                            #
@@ -52,7 +46,7 @@ RUN wget ${JBOSS_URL} -O ${JBOSS_USER_HOME}/${JBOSS_FILE} \
 #################################################################################################
 
 ############################## DEBUG | MULTI-DEPLOYMENTS USAGE ##################################
-# FROM daggerok/jboss:jboss-eap-6.4                                                             #
+# FROM daggerok/jboss-eap-6.4:latest                                                            #
 # # Debug:                                                                                      #
 # ENV JAVA_OPTS="$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005" #
 # EXPOSE 5005                                                                                   #
