@@ -11,7 +11,7 @@ Docker hub automation build. Based on (Linux Alpine, OpenJDK 8u151) docker image
 
 ```
 
-FROM daggerok/jboss:jboss-eap-6.4
+FROM daggerok/jboss-eap-6.4:v1
 HEALTHCHECK --timeout=2s --retries=22 \
         CMD wget -q --spider http://127.0.0.1:8080/my-service/health \
          || exit 1
@@ -23,7 +23,7 @@ ADD ./build/libs/*.war ${JBOSS_HOME}/standalone/deployments/my-service.war
 
 ```
 
-FROM daggerok/jboss:jboss-eap-6.4
+FROM daggerok/jboss-eap-6.4:v1
 # Remote debug:
 ENV JAVA_OPTS="$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 "
 EXPOSE 5005
